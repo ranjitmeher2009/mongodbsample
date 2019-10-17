@@ -1,12 +1,18 @@
-node {
-    stage('Checkout'){
-           checkout([
-            $class: 'GitSCM', 
-            branches: [[name: '*/master']], 
-            doGenerateSubmoduleConfigurations: false, 
-            extensions: [], submoduleCfg: [], 
-            userRemoteConfigs: [[credentialsId: 'git_credentials', url: 'https://github.com/ranjitmeher2009/mongodbsample']]
-            ])
+@Library(jenkins-library@master) _
+
+pipeline {
+    agent any
+    stages {
+        stage('Checkout'){
+            steps {
+                gitCheckout(
+                    branch: 'master',
+                    url: 'https://github.com/ranjitmeher2009/mongodbsam',
+                    gitCredential: 'git_credentials'
+                )
+            }
+        }
+
     }
 }
 
