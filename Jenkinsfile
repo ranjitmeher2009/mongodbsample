@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout'){
             steps {
                 gitCheckout(
-                    branch: 'master',
+                    branch: 'develop',
                     url: 'https://github.com/ranjitmeher2009/mongodbsample',
                     gitCredential: 'git_credentials'
                 )
