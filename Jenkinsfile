@@ -7,7 +7,7 @@ pipeline {
             steps {
                 gitCheckout(
                     branch: 'master',
-                    url: 'https://github.com/ranjitmeher2009/mongodbsam',
+                    url: 'https://github.com/ranjitmeher2009/mongodbsample',
                     gitCredential: 'git_credentials'
                 )
             }
